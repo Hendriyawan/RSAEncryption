@@ -13,10 +13,11 @@ cons = console.pyConsole()
 rsa = RSA.RSAEncryption()
 
 def main():
-	#generate keypair
-	#pasangan kunci public dan private
+	# generate keypair
+	# pasangan kunci public dan private
 	# kunci public : (e, n)
-	#kunci private : (d, n)
+	# kunci private : (d, n)
+	
 	print(cons.Proc('generate keypair...'))
 	public_key, private_key = rsa.gen_key()
 	
@@ -25,7 +26,7 @@ def main():
 	message = raw_input(cons.Proc('Enter your message : '))
 	
 	if len(message) == 0:
-		print(cons.Err('please enter your message ! '))
+		print(cons.Err('please enter your message ! \n'))
 		sys.exit(1)
 	else:
 		ciphertext = rsa.encrypt(public_key, message)
